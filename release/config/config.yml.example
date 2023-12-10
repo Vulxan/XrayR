@@ -1,5 +1,5 @@
 Log:
-  Level: warning # Log level: none, error, warning, info, debug 
+  Level: warning # Log level: none, error, warning, info, debug
   AccessPath: # /etc/XrayR/access.Log
   ErrorPath: # /etc/XrayR/error.log
 DnsConfigPath: # /etc/XrayR/dns.json # Path to dns config, check https://xtls.github.io/config/dns.html for help
@@ -13,7 +13,7 @@ ConnectionConfig:
   DownlinkOnly: 4 # Time limit when the connection is closed after the uplink is closed, Second
   BufferSize: 64 # The internal cache size of each connection, kB
 Nodes:
-  - PanelType: "SSpanel" # Panel type: SSpanel, NewV2board, PMpanel, Proxypanel, V2RaySocks, GoV2Panel, BunPanel
+  - PanelType: "SSpanel" # Panel type: SSpanel, NewV2board, PMpanel, Proxypanel, V2RaySocks, GoV2Panel, BunPanel, NextPanel
     ApiConfig:
       ApiHost: "http://127.0.0.1:667"
       ApiKey: "123"
@@ -46,13 +46,13 @@ Nodes:
         Timeout: 5 # Timeout for redis request
         Expiry: 60 # Expiry time (second)
       EnableFallback: false # Only support for Trojan and Vless
-      FallBackConfigs:  # Support multiple fallbacks
+      FallBackConfigs: # Support multiple fallbacks
         - SNI: # TLS SNI(Server Name Indication), Empty for any
           Alpn: # Alpn, Empty for any
           Path: # HTTP PATH, Empty for any
           Dest: 80 # Required, Destination of fallback, check https://xtls.github.io/config/features/fallback.html for details.
           ProxyProtocolVer: 0 # Send PROXY protocol version, 0 for disable
-      DisableLocalREALITYConfig: false  # disable local reality config
+      DisableLocalREALITYConfig: false # disable local reality config
       EnableREALITY: false # Enable REALITY
       REALITYConfigs:
         Show: true # Show REALITY debug
@@ -77,7 +77,6 @@ Nodes:
         DNSEnv: # DNS ENV option used by DNS provider
           ALICLOUD_ACCESS_KEY: aaa
           ALICLOUD_SECRET_KEY: bbb
-
 #  - PanelType: "SSpanel" # Panel type: SSpanel, V2board, NewV2board, PMpanel, Proxypanel, V2RaySocks, GoV2Panel
 #    ApiConfig:
 #      ApiHost: "http://127.0.0.1:668"

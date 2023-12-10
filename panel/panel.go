@@ -20,6 +20,7 @@ import (
 	"github.com/xtls/xray-core/infra/conf"
 
 	"github.com/XrayR-project/XrayR/api"
+	"github.com/XrayR-project/XrayR/api/nextpanel"
 	"github.com/XrayR-project/XrayR/api/pmpanel"
 	"github.com/XrayR-project/XrayR/api/proxypanel"
 	"github.com/XrayR-project/XrayR/api/sspanel"
@@ -190,6 +191,8 @@ func (p *Panel) Start() {
 			apiClient = gov2panel.New(nodeConfig.ApiConfig)
 		case "BunPanel":
 			apiClient = bunpanel.New(nodeConfig.ApiConfig)
+		case "NextPanel":
+			apiClient = nextpanel.New(nodeConfig.ApiConfig)
 		default:
 			log.Panicf("Unsupport panel type: %s", nodeConfig.PanelType)
 		}
