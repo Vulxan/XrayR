@@ -11,22 +11,23 @@ require (
 	github.com/eko/gocache/store/redis/v4 v4.2.1
 	github.com/fsnotify/fsnotify v1.7.0
 	github.com/go-acme/lego/v4 v4.14.2
-	github.com/go-resty/resty/v2 v2.10.0
-	github.com/gogf/gf/v2 v2.6.0
+	github.com/go-resty/resty/v2 v2.11.0
+	github.com/gogf/gf/v2 v2.6.1
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/r3labs/diff/v2 v2.15.1
-	github.com/redis/go-redis/v9 v9.3.0
-	github.com/sagernet/sing v0.2.19
+	github.com/redis/go-redis/v9 v9.3.1
+	github.com/sagernet/sing v0.2.20
 	github.com/sagernet/sing-shadowsocks v0.2.6
-	github.com/shirou/gopsutil/v3 v3.23.11
+	github.com/shirou/gopsutil/v3 v3.23.12
+	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.8.0
-	github.com/spf13/viper v1.18.1
+	github.com/spf13/viper v1.18.2
 	github.com/stretchr/testify v1.8.4
 	github.com/xtls/xray-core v1.8.6
-	golang.org/x/crypto v0.16.0
+	golang.org/x/crypto v0.17.0
 	golang.org/x/net v0.19.0
 	golang.org/x/time v0.5.0
-	google.golang.org/protobuf v1.31.0
+	google.golang.org/protobuf v1.32.0
 )
 
 require (
@@ -176,7 +177,6 @@ require (
 	github.com/scaleway/scaleway-sdk-go v1.0.0-beta.17 // indirect
 	github.com/seiflotfy/cuckoofilter v0.0.0-20220411075957-e3b120b3f5fb // indirect
 	github.com/shoenig/go-m1cpu v0.1.6 // indirect
-	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/smartystreets/go-aws-auth v0.0.0-20180515143844-0c1422d1fdb9 // indirect
 	github.com/softlayer/softlayer-go v1.1.2 // indirect
 	github.com/softlayer/xmlrpc v0.0.0-20200409220501-5f089df7cb7e // indirect
