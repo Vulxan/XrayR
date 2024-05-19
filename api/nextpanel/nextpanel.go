@@ -260,6 +260,7 @@ func (c *APIClient) ParseNodeInfo(nodeInfoResponse *NodeInfoResponse) (*api.Node
 		EnableVless:       enableVless,
 		VlessFlow:         nodeConfig.Flow,
 		CypherMethod:      nodeConfig.Method,
+		ServerKey:         nodeConfig.ServerKey,
 		ServiceName:       nodeConfig.Servicename,
 		Header:            nodeConfig.Header,
 		EnableREALITY:     nodeConfig.EnableReality,

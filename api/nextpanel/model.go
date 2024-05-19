@@ -22,6 +22,7 @@ type CustomConfig struct {
 	Obfs          string          `json:"obfs"`
 	Header        json.RawMessage `json:"header"`
 	AllowInsecure string          `json:"allow_insecure"`
+	ServerKey     string          `json:"server_key"`
 	Servicename   string          `json:"servicename"`
 	EnableXtls    string          `json:"enable_xtls"`
 	Flow          string          `json:"flow"`
