@@ -10,7 +10,7 @@ type NodeInfoResponse struct {
 }
 
 type CustomConfig struct {
-	Port          string          `json:"port"`
+	Port          string          `json:"node_port"`
 	Host          string          `json:"host"`
 	Method        string          `json:"method"`
 	Tls           string          `json:"tls"`
