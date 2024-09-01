@@ -184,7 +184,7 @@ func (c *APIClient) GetNodeInfo() (nodeInfo *api.NodeInfo, err error) {
 	c.resp.Store(server)
 
 	switch c.NodeType {
-	case "V2ray":
+	case "V2ray", "Vmess", "Vless":
 		nodeInfo, err = c.parseV2rayNodeResponse(server)
 	case "Trojan":
 		nodeInfo, err = c.parseTrojanNodeResponse(server)
@@ -207,7 +207,7 @@ func (c *APIClient) GetUserList() (UserList *[]api.UserInfo, err error) {
 	path := "/api/v1/server/UniProxy/user"
 
 	switch c.NodeType {
-	case "V2ray", "Trojan", "Shadowsocks":
+	case "V2ray", "Trojan", "Shadowsocks", "Vmess", "Vless":
 		break
 	default:
 		return nil, fmt.Errorf("unsupported node type: %s", c.NodeType)
@@ -412,6 +412,18 @@ func (c *APIClient) parseV2rayNodeResponse(s *serverConfig) (*api.NodeInfo, erro
 			} else {
 				header = httpHeader
 			}
+		}
+	case "httpupgrade", "splithttp":
+		if s.NetworkSettings.Headers != nil {
+			if httpHeaders, err := s.NetworkSettings.Headers.MarshalJSON(); err != nil {
+				return nil, err
+			} else {
+				b, _ := simplejson.NewJson(httpHeaders)
+				host = b.Get("Host").MustString()
+			}
+		}
+		if s.NetworkSettings.Host != "" {
+			host = s.NetworkSettings.Host
 		}
 	}
 
